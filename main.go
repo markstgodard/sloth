@@ -32,7 +32,7 @@ func main() {
 func index(w http.ResponseWriter, r *http.Request) {
 	time.Sleep(delay)
 
-	s := fmt.Sprintf("index: %s slept for: %v\n", os.Getenv("CF_INSTANCE_INDEX"), delay)
+	s := fmt.Sprintf("endpoint: %s:%s slept for: %v\n", os.Getenv("CF_INSTANCE_IP"), os.Getenv("CF_INSTANCE_PORT"), delay)
 	fmt.Printf(s)
 	fmt.Fprintf(w, s)
 }
